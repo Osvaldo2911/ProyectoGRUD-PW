@@ -15,6 +15,14 @@ class EmpleadoDAO{
         return $res;
         
     }
+
+    public function eliminarEmp($emp_no){
+        
+        $sql = "DELETE FROM Empleados WHERE emp_no = '$emp_no'";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+        
+    }
 }
 
 ?>
