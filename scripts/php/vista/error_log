@@ -1,9 +1,0 @@
-[04-Jan-2022 01:23:58 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:24:01 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:24:05 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:26:15 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:26:23 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:26:43 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 5
-[04-Jan-2022 01:28:14 UTC] PHP Notice:  Undefined index: u_valido in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 3
-[04-Jan-2022 01:28:18 UTC] PHP Notice:  Undefined index: u_valido in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 3
-[04-Jan-2022 01:28:21 UTC] PHP Notice:  Undefined index: u_valido in /home/progra44/paginaosvaldo.programacionisc2018.com/scripts/php/vista/Crud_inicio.php on line 3
