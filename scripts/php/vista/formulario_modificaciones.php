@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION['u_valido'] == false) {
     echo "<h1>Debe de Iniciar Sesión</h1>";
-    header('location: login.html');
+    header('location: login.php');
 }
 ?>
 <?php
@@ -90,7 +90,7 @@ echo $_GET["id"];
                     include('../modelo/empleado_dao.php');
                     $id = $_GET["id"];
                     $aDAO = new EmpleadoDAO();
-                    $res = $aDAO->mostrarEmpleado($id);
+                    $res = $aDAO->mostrarEmpleados($id);
 
                     if (mysqli_num_rows($res) > 0) {
                         //echo "<table class= 'table table-striped table-bordered'>";
