@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    
+        <script>
+        function alertConf(){
+            alert("Desea eliminarlo?");
+        }
+    </script>
 
     <div class="container-fluid">
         <div class="row flex-nowrap">
@@ -38,29 +44,29 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item">
-                            <a href="Crud_inicio.html" class="nav-link align-middle px-0">
+                            <a href="Crud_inicio.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-house-door-fill"></i> <span
                                     class="ms-1 d-none d-sm-inline">Inicio</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Crud_empleados.html" class="nav-link align-middle px-0">
+                            <a href="Crud_empleados.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-person-fill"></i> <span
                                     class="ms-1 d-none d-sm-inline">Empleados</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Crud_consultas.html" class="nav-link align-middle px-0">
+                            <a href="Crud_consultas.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-search"></i> <span
                                     class="ms-1 d-none d-sm-inline">Consulta</span>
                             </a>
                         </li>
                         <li class="nav-item mb-5">
-                            <a href="404.html" class="nav-link align-middle px-0">
+                            <a href="#" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-wrench"></i> <span class="ms-1 d-none d-sm-inline">Proyectos</span>
                             </a>
                         </li>
-                        <form action="" method="POST" class="mt-5">
+                        <form action="cerrarsesion.php" method="POST" class="mt-5">
                             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">CERRAR SESION</button>
                         </form>
                     </ul>
@@ -84,7 +90,7 @@
                                     Agrega Empleado
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="POST">
+                                    <form action="../controlador/alta_emp.php" method="POST">
                                         <div class="mb-3">
                                             <label for="txtNombre" class="form-label">Nombre</label>
                                             <span class="error" style="color:red">
@@ -101,21 +107,6 @@
                                                 placeholder="Apellido Paterno" value="">
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="txtAM" class="form-label">Apellido materno</label>
-                                            <span class="error" style="color:red">
-                                            </span>
-                                            <input type="text" class="form-control" name="txtAM" id="txtAM"
-                                                placeholder="Apellido Materno" value="">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="txtDNI" class="form-label">DNI</label>
-                                            <span class="error" style="color:red">
-                                            </span>
-                                            <input type="number" class="form-control" name="txtDNI" id="txtDNI"
-                                                placeholder="DNI" value="">
-                                        </div>
 
                                         <div class="mb-3">
                                             <label for="txtFecha" class="form-label">Fecha de nacimiento</label>
@@ -126,44 +117,21 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="txtDirecion" class="form-label">Direccion</label>
-                                            <span class="error" style="color:red">
-                                            </span>
-                                            <input type="text" class="form-control" name="txtDirecion" id="txtDirecion"
-                                                placeholder="Direccion" value="">
-                                        </div>
-
-                                        <div class="mb-3">
                                             <label for="txtTipo" class="form-label">Sexo</label>
                                             <select class="form-select" id="typo" name="typo">
-                                                <option value="Hombre">M</option>
-                                                <option value="Mujer">F</option>
+                                                <option value="H">M</option>
+                                                <option value="M">F</option>
                                             </select>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="txtSueldo" class="form-label">Sueldo</label>
+                                            <label for="txtFecha" class="form-label">Inicio laboral</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="number" class="form-control" name="txtSueldo" id="txtSueldo"
-                                                placeholder="Sueldo" value="">
+                                            <input type="date" class="form-control" name="txtLaboralFecha" id="txtFecha"
+                                                placeholder="" value="">
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="txtSDNI" class="form-label">Super DNI</label>
-                                            <span class="error" style="color:red">
-                                            </span>
-                                            <input type="number" class="form-control" name="txtSDNI" id="txtSDNI"
-                                                placeholder="Super DNI" value="">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="txtDNO" class="form-label">DNO</label>
-                                            <span class="error" style="color:red">
-                                            </span>
-                                            <input type="number" class="form-control" name="txtDNO" id="txtDNO"
-                                                placeholder="DNO" value="">
-                                        </div>
                                         <br>
                                         <div class="btn-group" role="group">
                                             <button type="submit" class="btn btn-success" onclick=" ">Agregar</button>
@@ -180,6 +148,49 @@
             </div>
         </div>
     </div>
+    
+    <div class="col-12">
+                <table id="tabla" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Num Empleado</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Sexo</th>
+                            <th>Fecha Laboral</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <?php
+                            include('../modelo/empleado_dao.php');
+                            $dao = new EmpleadoDAO();
+                            $res = $dao->mostrar();
+
+                            if (mysqli_num_rows($res) > 0) {
+                                //echo "<table class= 'table table-striped table-bordered'>";
+                                while ($fila = mysqli_fetch_assoc($res)) {
+                                    printf("<tr>
+                                         <td>" . $fila['emp_no'] . "</td>" .
+                                        "<td>" . $fila['birth_date'] . "</td>" .
+                                        "<td>" . $fila['first_name'] . "</td>" .
+                                        "<td>" . $fila['last_name'] . "</td>" .
+                                        "<td>" . $fila['gender'] . "</td>" .
+                                        "<td>" . $fila['hire_date'] . "</td>" .
+                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=" . $fila["emp_no"] . "' data-bs-toggle='modal'>SELECCIONAR</a></td>" .
+                                        "<td> <a href='../controlador/baja_emp.php?emp_no=%s' class= 'btn btn-danger' onclick='return alertConf()'> ELIMINAR</a>  </td> </tr>", $fila['emp_no']);
+                                }
+                            } else {
+                                echo "SIN REGISTROS PARA MOSTRAR";
+                            }
+
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 

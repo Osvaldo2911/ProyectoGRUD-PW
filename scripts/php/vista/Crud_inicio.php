@@ -46,25 +46,25 @@ if($_SESSION['u_valido']==false){
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item">
-                            <a href="Crud_inicio.html" class="nav-link align-middle px-0">
+                            <a href="Crud_inicio.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-house-door-fill"></i> <span
                                     class="ms-1 d-none d-sm-inline">Inicio</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Crud_empleados.html" class="nav-link align-middle px-0">
+                            <a href="Crud_empleados.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-person-fill"></i> <span
                                     class="ms-1 d-none d-sm-inline">Empleados</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Crud_consultas.html" class="nav-link align-middle px-0">
+                            <a href="Crud_consultas.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-search"></i> <span
                                     class="ms-1 d-none d-sm-inline">Consulta</span>
                             </a>
                         </li>
                         <li class="nav-item mb-5">
-                            <a href="404.html" class="nav-link align-middle px-0">
+                            <a href="#" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-wrench"></i> <span class="ms-1 d-none d-sm-inline">Proyectos</span>
                             </a>
                         </li>
