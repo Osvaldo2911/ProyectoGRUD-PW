@@ -74,72 +74,107 @@
                         </div>
                     </center>
                 </header>
+                
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    Agrega Empleado
+                                </div>
+                                <div class="card-body">
+                                    <form action="../controlador/alta_emp.php" method="POST">
+                                        <div class="mb-3">
+                                            <label for="txtNombre" class="form-label">Nombre</label>
+                                            <span class="error" style="color:red">
+                                            </span>
+                                            <input type="text" class="form-control" name="txtNombre" id="txtNombre"
+                                                placeholder="Nombre" value="" required>
+                                        </div>
 
-                <div class="col-12 mt-3">
-                    <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                        <div class="dataTable-top">
-                            <div>
-                                <h6>Tabla Empleados</h6>
-                            </div>
+                                        <div class="mb-3">
+                                            <label for="txtAP" class="form-label">Apellido paterno</label>
+                                            <span class="error" style="color:red">
+                                            </span>
+                                            <input type="text" class="form-control" name="txtAP" id="txtAP"
+                                                placeholder="Apellido Paterno" value="" required>
+                                        </div>
 
-                        </div>
-                        <form class="d-flex m-3">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <div class="dataTable-container table-responsive">
-                            <table id="tabla" class="table table-striped table-bordered table-hover dataTable-table">
-                                <thead>
-                                    <tr>
-                                        <th data-sortable="" style="width: 13.2893%;"><a
-                                                class="dataTable-sorter">Nombre</a></th>
-                                        <th data-sortable="" style="width: 9.80207%;"><a
-                                                class="dataTable-sorter">Apellido paterno</a></th>
-                                        <th data-sortable="" style="width: 9.04807%;"><a
-                                                class="dataTable-sorter">Apellido materno</a></th>
-                                        <th data-sortable="" style="width: 12.1583%;"><a
-                                                class="dataTable-sorter">DNI</a></th>
-                                        <th data-sortable="" style="width: 12.0641%;"><a class="dataTable-sorter">Fecha
-                                                nacimiento</a></th>
-                                        <th data-sortable="" style="width: 7.82281%;"><a
-                                                class="dataTable-sorter">Direccion</a></th>
-                                        <th data-sortable="" style="width: 6.3148%;"><a
-                                                class="dataTable-sorter">Sexo</a></th>
-                                        <th data-sortable="" style="width: 6.3148%;"><a
-                                                class="dataTable-sorter">Sueldo</a></th>
-                                        <th data-sortable="" style="width: 6.3148%;"><a class="dataTable-sorter">Super
-                                                DNI</a></th>
-                                        <th data-sortable="" style="width: 6.3148%;"><a class="dataTable-sorter">DNO</a>
-                                        </th>
-                                        <th data-sortable="" style="width: 15.1744%;"><a
-                                                class="dataTable-sorter">Modificar</a></th>
-                                        <th data-sortable="" style="width: 14.3261%;"><a
-                                                class="dataTable-sorter">Eliminar</a></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>os</td>
-                                        <td>MonteOlivo</td>
-                                        <td>Villanueva</td>
-                                        <td>66901</td>
-                                        <td>Casa</td>
-                                        <td>7</td>
-                                        <td>2000</td>
-                                        <td>66901</td>
-                                        <td>Casa</td>
-                                        <td>7</td>
-                                        <td> <a href="Crud_empleadosMod.html" class="btn btn-outline-success" onclick="">
-                                                Modificar</a> </td>
-                                        <td> <a href="#" class="btn btn-outline-danger" onclick="">
-                                                Eliminar</a> </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
 
-                    </div>
-                </div>
+                                        <div class="mb-3">
+                                            <label for="txtFecha" class="form-label">Fecha de nacimiento</label>
+                                            <span class="error" style="color:red">
+                                            </span>
+                                            <input type="date" class="form-control" name="txtFecha" id="txtFecha"
+                                                placeholder="" value="" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="txtTipo" class="form-label">Sexo</label>
+                                            <select class="form-select" id="typo" name="typo">
+                                                <option value="H">M</option>
+                                                <option value="M">F</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="txtFecha" class="form-label">Inicio laboral</label>
+                                            <span class="error" style="color:red">
+                                            </span>
+                                            <input type="date" class="form-control" name="txtLaboralFecha" id="txtFecha"
+                                                placeholder="" value="" required>
+                                        </div>
+
+                                        <br>
+                                        <div class="btn-group" role="group">
+                                            <button type="submit" class="btn btn-success" onclick=" ">Agregar</button>
+                                            <button id="btnCancelar" type="reset" class="btn btn-outline-danger">Cancelar</button>
+                                        </div>
+                                    </form>
+                
+                <div class="col-12 mt-5">
+                <table id="tabla" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Num Empleado</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Sexo</th>
+                            <th>Fecha Laboral</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <?php
+                            include('../modelo/empleado_dao.php');
+                            $dao = new EmpleadoDAO();
+                            $res = $dao->mostrar();
+
+                            if (mysqli_num_rows($res) > 0) {
+                                //echo "<table class= 'table table-striped table-bordered'>";
+                                while ($fila = mysqli_fetch_assoc($res)) {
+                                    printf("<tr>
+                                         <td>" . $fila['emp_no'] . "</td>" .
+                                        "<td>" . $fila['birth_date'] . "</td>" .
+                                        "<td>" . $fila['first_name'] . "</td>" .
+                                        "<td>" . $fila['last_name'] . "</td>" .
+                                        "<td>" . $fila['gender'] . "</td>" .
+                                        "<td>" . $fila['hire_date'] . "</td>" .
+                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=" . $fila["emp_no"] . "' data-bs-toggle='modal'>SELECCIONAR</a></td>" .
+                                        "<td> <a href='../controlador/baja_emp.php?emp_no=%s' class= 'btn btn-danger' onclick='return alertConf()'> ELIMINAR</a>  </td> </tr>", $fila['emp_no']);
+                                }
+                            } else {
+                                echo "SIN REGISTROS PARA MOSTRAR";
+                            }
+
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+                
 
             </div>
         </div>
