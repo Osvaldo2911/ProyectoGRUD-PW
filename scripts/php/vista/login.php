@@ -27,7 +27,7 @@
           <div class="navbar-collapse collapse show" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="../../../index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Acerca de nosotros</a>
@@ -37,10 +37,10 @@
               </li>
             </ul>
             <form class="d-flex">
-              <a href="login.html">
+              <a href="login.php">
                 <button type="button" class="btn btn-outline-light me-2">Inicia sesion</button>
               </a>
-              <a href="sign.html">
+              <a href="sign.php">
                 <button type="button" class="btn btn-primary">Registrate</button>
               </a>
             </form>
@@ -62,17 +62,17 @@
             <form action="../controlador/validar_usuario.php" method="POST" class="signin-form">
               <div class="form-group mb-3">
                 <label class="label" for="name">Correo Electronico</label>
-                <input type="email" name="correologin" class="form-control" placeholder="Email" required="">
+                <input type="email" name="correologin" class="form-control" placeholder="Email" required>
               </div>
               <div class="form-group mb-3">
                 <label class="label" for="password">Contraseña</label>
-                <input type="password" name="contralogin" class="form-control" placeholder="Contraseña" required="">
+                <input type="password" name="contralogin" class="form-control" placeholder="Contraseña" required>
               </div>
               <div class="form-group">
                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Iniciar</button>
               </div>
             </form>
-            <p class="text-center"><br> Crea una cuenta <a data-toggle="tab" href="#signup">Registrate </a></p>
+            <p class="text-center"><br> Crea una cuenta <a data-toggle="tab" href="sign.php">Registrate </a></p>
           </div>
         </div>
       </div>
