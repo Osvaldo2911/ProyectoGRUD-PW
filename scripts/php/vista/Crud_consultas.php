@@ -50,6 +50,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="Crud_salario.php" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-person-fill"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Salario</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="Crud_consultas.php" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-search"></i> <span class="ms-1 d-none d-sm-inline">Consulta</span>
                             </a>
