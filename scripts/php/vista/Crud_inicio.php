@@ -83,6 +83,43 @@ if($_SESSION['u_valido']==false){
                         </div>
                     </center>
                 </header>
+                
+                <div class="col-12 mt-5">
+                <table id="tabla" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <label class="m-2"><b><h4>Empleados -- Salario</h4></b></label>
+                        <tr>
+                            <th>Num Empleado</th>
+                            <th>Nombre</th>
+                            <th>Fecha Laboral</th>
+                            <th>Salario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <?php
+                            include('../modelo/empleado_dao.php');
+                            $dao = new EmpleadoDAO();
+                            $res = $dao->mostrarJoin();
+
+                            if (mysqli_num_rows($res) > 0) {
+                                //echo "<table class= 'table table-striped table-bordered'>";
+                                while ($fila = mysqli_fetch_assoc($res)) {
+                                    printf("<tr>
+                                         <td>" . $fila['emp_no'] . "</td>" .
+                                        "<td>" . $fila['first_name'] . "</td>" .
+                                        "<td>" . $fila['hire_date'] . "</td>" .
+                                        "<td>" . $fila['salary'] . "</td>");
+                                }
+                            } else {
+                                echo "SIN REGISTROS PARA MOSTRAR";
+                            }
+
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             </div>
         </div>
