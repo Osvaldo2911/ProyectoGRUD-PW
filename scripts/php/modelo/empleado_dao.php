@@ -8,9 +8,9 @@ class EmpleadoDAO{
         $this->conexion=new ConexionBDEmpresa();
     }
 
-    public function agregarEmp($emp_no, $birth_date, $first_name,$last_name, $gender, $hire_date){
+    public function agregarEmp($birth_date, $first_name,$last_name, $gender, $hire_date){
         
-        $sql = "INSERT INTO Empleados values ('$emp_no','$birth_date','$first_name','$last_name','$gender','$hire_date')";
+        $sql = "INSERT INTO Empleados (birth_date,first_name,last_name,gender,hire_date) values ('$birth_date','$first_name','$last_name','$gender','$hire_date')";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
         
@@ -18,7 +18,7 @@ class EmpleadoDAO{
 
     public function eliminarEmp($emp_no){
         
-        $sql = "DELETE FROM Empleados WHERE emp_no = '$emp_no'";
+        $sql = "DELETE FROM Empleados WHERE emp_no = $emp_no";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
         
@@ -31,6 +31,19 @@ class EmpleadoDAO{
         return $res;
         
     }
+        public function mostrar(){
+        $sql = "SELECT * FROM Empleados";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
+    public function mostrarEmpleados($emp){
+        $sql = "SELECT * FROM Empleados where emp_no = $emp_no";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
+    
+    
+    
 
     //Select * from Empleados where emp_no LIKE '%" + $emp_no + "%' AND birth_date LIKE '%" + $birth_date + "%' AND first_name LIKE '%" + sa + "%' AND last_name LIKE '%" + te + "%' AND gender LIKE '%" + ti + "%' AND hire_date LIKE '%" + re + "%';";
 

@@ -19,7 +19,7 @@
             <div class="col-md-12 text-center">
                 <span class="display-1 d-block">404</span>
                 <div class="mb-4 lead">La pagina que estas buscando no se encuentra disponible</div>
-                <a href="Crud_inicio.html" class="btn btn-link">Regresar al inicio</a>
+                <a href="index.html" class="btn btn-link">Regresar al inicio</a>
             </div>
         </div>
     </div>
