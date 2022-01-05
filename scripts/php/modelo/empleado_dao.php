@@ -26,7 +26,7 @@ class EmpleadoDAO{
 
     public function modificarEmp($emp_no, $birth_date, $first_name,$last_name, $gender, $hire_date){
         
-        $sql = "UPDATE Empleados SET birth_date = '$birth_date',first_name = '$first_name',last_name = '$last_name',gender ='$gender',hire_date='$hire_date' WHERE emp_no = '$emp_no'";
+        $sql = "UPDATE Empleados SET birth_date = '$birth_date',first_name = '$first_name',last_name = '$last_name',gender ='$gender',hire_date='$hire_date' WHERE emp_no = $emp_no";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
         
@@ -36,8 +36,14 @@ class EmpleadoDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
-    public function mostrarEmpleados($emp){
+    public function mostrarEmpleados($emp_no){
         $sql = "SELECT * FROM Empleados where emp_no = $emp_no";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
+    
+            public function mostrarJoin(){
+        $sql = "SELECT Empleados.emp_no,first_name,hire_date,Salario.salary FROM Empleados INNER JOIN Salario ON Empleados.emp_no=Salario.emp_no";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
