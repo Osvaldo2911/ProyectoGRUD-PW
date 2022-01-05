@@ -95,16 +95,16 @@
                                             <label for="txtNombre" class="form-label">Nombre</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="text" class="form-control" name="txtNombre" id="txtNombre"
-                                                placeholder="Nombre" value="">
+                                            <input type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 ||event.charCode >= 97 && event.charCode <= 122' class="form-control" name="txtNombre" id="txtNombre"
+                                                placeholder="Nombre" value="" required>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="txtAP" class="form-label">Apellido paterno</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="text" class="form-control" name="txtAP" id="txtAP"
-                                                placeholder="Apellido Paterno" value="">
+                                            <input type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 ||event.charCode >= 97 && event.charCode <= 122' class="form-control" name="txtAP" id="txtAP"
+                                                placeholder="Apellido Paterno" value="" required>
                                         </div>
 
 
@@ -113,7 +113,7 @@
                                             <span class="error" style="color:red">
                                             </span>
                                             <input type="date" class="form-control" name="txtFecha" id="txtFecha"
-                                                placeholder="" value="">
+                                                placeholder="" value="" required>
                                         </div>
 
                                         <div class="mb-3">
@@ -129,29 +129,19 @@
                                             <span class="error" style="color:red">
                                             </span>
                                             <input type="date" class="form-control" name="txtLaboralFecha" id="txtFecha"
-                                                placeholder="" value="">
+                                                placeholder="" value="" required>
                                         </div>
 
                                         <br>
                                         <div class="btn-group" role="group">
                                             <button type="submit" class="btn btn-success" onclick=" ">Agregar</button>
-                                            <button id="btnCancelar" type="button" class="btn btn-">Cancelar</button>
+                                            <button id="btnCancelar" type="reset" class="btn btn-outline-danger">Cancelar</button>
                                         </div>
                                     </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-12">
+            <div class="col-12 mt-5">
                 <table id="tabla" class="table table-striped table-bordered table-hover">
                     <thead>
+                        
                         <tr>
                             <th>Num Empleado</th>
                             <th>Fecha de Nacimiento</th>
@@ -190,6 +180,18 @@
                     </tbody>
                 </table>
             </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
     
 
     <!-- Optional JavaScript; choose one of the two! -->
