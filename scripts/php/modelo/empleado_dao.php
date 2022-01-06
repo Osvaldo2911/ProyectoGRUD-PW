@@ -16,6 +16,14 @@ class EmpleadoDAO{
         
     }
 
+    public function agregarSal($emp_no, $salary, $from_date, $to_date){
+        
+        $sql = "INSERT INTO Salario (emp_no,salary,from_date,to_date) values ($emp_no,$salary,'$from_date','$to_date')";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+        
+    }
+
     public function eliminarEmp($emp_no){
         
         $sql = "DELETE FROM Empleados WHERE emp_no = $emp_no";
@@ -36,6 +44,12 @@ class EmpleadoDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
+
+    public function mostrarSalario(){
+        $sql = "SELECT * FROM Salario";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+
     public function mostrarEmpleados($emp_no){
         $sql = "SELECT * FROM Empleados where emp_no = $emp_no";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
