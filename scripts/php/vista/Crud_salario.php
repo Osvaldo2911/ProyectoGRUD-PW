@@ -83,7 +83,7 @@
                 <header class="bg-white shadow-sm px-4 py-3 z-index-20">
                     <center>
                         <div class="container-fluid px-0">
-                            <h4 class="mb-0 p-1">Empleados</h4>
+                            <h4 class="mb-0 p-1">Salario</h4>
                         </div>
                     </center>
                 </header>
@@ -93,48 +93,40 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    Agrega Empleado
+                                    Agrega Salario
                                 </div>
                                 <div class="card-body">
                                     <form action="../controlador/alta_emp.php" method="POST">
                                         <div class="mb-3">
-                                            <label for="txtNombre" class="form-label">Nombre</label>
+                                            <label for="txtemp_no" class="form-label">Numero de empleado</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 ||event.charCode >= 97 && event.charCode <= 122' class="form-control" name="txtNombre" id="txtNombre"
-                                                placeholder="Nombre" value="" required>
+                                            <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" name="txtEmp_no" id="txtEmp_no"
+                                                placeholder="Empleado ID" value="" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="txtAP" class="form-label">Apellido paterno</label>
+                                            <label for="txtSalario" class="form-label">Salario</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 ||event.charCode >= 97 && event.charCode <= 122' class="form-control" name="txtAP" id="txtAP"
-                                                placeholder="Apellido Paterno" value="" required>
+                                            <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" name="txtSalario" id="txtSalario"
+                                                placeholder="Salario" value="" required>
                                         </div>
 
 
                                         <div class="mb-3">
-                                            <label for="txtFecha" class="form-label">Fecha de nacimiento</label>
+                                            <label for="txtFechaIn" class="form-label">Fecha inicio</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="date" class="form-control" name="txtFecha" id="txtFecha"
+                                            <input type="date" class="form-control" name="txtFechaIn" id="txtFechaIn"
                                                 placeholder="" value="" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="txtTipo" class="form-label">Sexo</label>
-                                            <select class="form-select" id="typo" name="typo">
-                                                <option value="H">M</option>
-                                                <option value="M">F</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="txtFecha" class="form-label">Inicio laboral</label>
+                                            <label for="txtFechaFi" class="form-label">Fecha final</label>
                                             <span class="error" style="color:red">
                                             </span>
-                                            <input type="date" class="form-control" name="txtLaboralFecha" id="txtFecha"
+                                            <input type="date" class="form-control" name="txtFechaFi" id="txtFechaFi"
                                                 placeholder="" value="" required>
                                         </div>
 
@@ -147,14 +139,11 @@
             <div class="col-12 mt-5">
                 <table id="tabla" class="table table-striped table-bordered table-hover">
                     <thead>
-                        
                         <tr>
                             <th>Num Empleado</th>
-                            <th>Fecha de Nacimiento</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Sexo</th>
-                            <th>Fecha Laboral</th>
+                            <th>Salario</th>
+                            <th>Fecha inicio</th>
+                            <th>Fecha final</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -162,20 +151,17 @@
                             <?php
                             include('../modelo/empleado_dao.php');
                             $dao = new EmpleadoDAO();
-                            $res = $dao->mostrar();
+                            $res = $dao->mostrarSalario();
 
                             if (mysqli_num_rows($res) > 0) {
                                 //echo "<table class= 'table table-striped table-bordered'>";
                                 while ($fila = mysqli_fetch_assoc($res)) {
                                     printf("<tr>
                                          <td>" . $fila['emp_no'] . "</td>" .
-                                        "<td>" . $fila['birth_date'] . "</td>" .
-                                        "<td>" . $fila['first_name'] . "</td>" .
-                                        "<td>" . $fila['last_name'] . "</td>" .
-                                        "<td>" . $fila['gender'] . "</td>" .
-                                        "<td>" . $fila['hire_date'] . "</td>" .
-                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=" . $fila["emp_no"] . "' data-bs-toggle='modal'>SELECCIONAR</a></td>" .
-                                        "<td> <a href='../controlador/baja_emp.php?emp_no=%s' class= 'btn btn-danger' onclick='return alertConf()'> ELIMINAR</a>  </td> </tr>", $fila['emp_no']);
+                                        "<td>" . $fila['salary'] . "</td>" .
+                                        "<td>" . $fila['from_date'] . "</td>" .
+                                        "<td>" . $fila['to_date'] . "</td>" .
+                                        "</tr>", $fila['emp_no']);
                                 }
                             } else {
                                 echo "SIN REGISTROS PARA MOSTRAR";
